@@ -23,4 +23,12 @@ public class UserServices {
         return obj.get();
         
     }
+
+    public User save(User u){
+        return userRepository.save(u);
+    }
+
+    public void delete(Long id){
+        userRepository.deleteById(id);
+    }
 }
