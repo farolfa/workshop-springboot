@@ -19,7 +19,6 @@ import jakarta.persistence.Table;
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @JsonIgnore
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,7 +27,7 @@ public class User implements Serializable {
     private String email;
     private String number;
     private String password;
-
+    @JsonIgnore
     @OneToMany(mappedBy="client")
     private List<Order> orders=new ArrayList<>() ;
 
