@@ -33,10 +33,10 @@ public class UserResources {
         return ResponseEntity.ok().body(obj);
     }
     @PostMapping
-    public ResponseEntity<User> save(User u){
+    public ResponseEntity<User> save(@RequestMapping User u){
         return ResponseEntity.ok().body(services.save(u));
     }
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete (@PathVariable Long id){
         return ResponseEntity.noContent().build();
     }
